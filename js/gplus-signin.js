@@ -80,10 +80,6 @@ var helper = (function() {
  * jQuery initialization
  */
  $(document).ready(function() {
-  $('.fancybox').fancybox({
-    type: 'iframe',
-    autoSize : false
-  });
   $('#disconnect').click(helper.disconnect);
   $('#loaderror').hide();
   
