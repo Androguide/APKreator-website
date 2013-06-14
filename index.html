@@ -39,6 +39,15 @@
 		<meta itemprop="description" content="The 1st full-blown Online IDE for Android with Realtime collaboration, Github &amp; Google Drive integration, support for building APKs right from the cloud and much more!">
 		<meta itemprop="image" content="http://apkreator.com/img/screenshots/sandbox-screenshot.png">
 
+<script type="text/javascript">if($(window).width()>1024){document.write("<"+"script src='js/jquery.preloader.js'></"+"script>");}	</script>
+  <script>		
+  jQuery(window).load(function() {	
+   $x = $(window).width();		
+   if($x > 1024) { jQuery("#content .row").preloader(); }			 
+   jQuery('.spinner').animate({'opacity':0},1000,'easeOutCubic',function (){jQuery(this).css('display','none')});	
+ }); 
+  </script>
+
 		<!--[if lt IE 8]>
 	  		<div style='text-align:center'><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/img/upgrade.jpg"border="0"alt=""/></a></div>  
 	  		<![endif]-->
@@ -82,15 +91,8 @@
                 <a class="btn btn-navbar btn-navbar_" data-toggle="collapse" data-target=".nav-collapse_">Menu<span class="icon-bar"></span> </a>
                 <div class="nav-collapse nav-collapse_  collapse">
                   <ul class="nav sf-menu">
-                    <li><a href="index.html">Home</a></li>
-              
-                        <li class="active"><a href="sandbox.html">Sandbox</a></li>
-                        <li class="sub-menu" id="authOps"><a href="#" id="profile">YOU</a>
-                          <ul>
-                            <li><a href="#">Your account</a></li>
-                            <li><a href="#">Settings</a></li>
-                            <li><a href="#" id="disconnect">Log-out</a></li>
-                          </ul></li>
+                        <li class="active"><a href="sandbox-realtime.html">Real-Time Sandbox</a></li>
+                        <li class="active"><a href="sandbox.html">Solo Sandbox</a></li>
                         </ul>
                       </div>
                     </div>
