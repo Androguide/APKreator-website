@@ -69,373 +69,373 @@
 	    src="realtime-client-utils.js"></script>
 	</head>
 
-	<body style="background: #FFFFFF">
+	<body onLoad="startRealtime()"style="background: #FFFFFF">
 		<!-- header -->
 		<header id="header-navbar">
-			<div class="container clearfix">
-				<div class="row">
-					<div class="span12">
-						<div class="navbar navbar_">
-							<div class="container">
-								<h1 class="brand brand_"><a href="index.html"><img alt="" src="img/logo.png"></a></h1>
-								<a class="btn btn-navbar btn-navbar_" data-toggle="collapse" data-target=".nav-collapse_">Menu<span class="icon-bar"></span> </a>
-								<div class="nav-collapse nav-collapse_  collapse">
-									<ul class="nav sf-menu">
-										<li class="active"><a href="#">Real-Time Sandbox</a></li>
-										<li><a href="sandbox.html">Solo Sandbox</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
+      <div class="container clearfix">
+        <div class="row">
+          <div class="span12">
+            <div class="navbar navbar_">
+              <div class="container">
+                <h1 class="brand brand_"><a href="index.html"><img alt="" src="img/logo.png"></a></h1>
+                <a class="btn btn-navbar btn-navbar_" data-toggle="collapse" data-target=".nav-collapse_">Menu<span class="icon-bar"></span> </a>
+                <div class="nav-collapse nav-collapse_  collapse">
+                  <ul class="nav sf-menu">
+                        <li class="active"><a href="#">Real-Time Sandbox</a></li>
+                        <li><a href="sandbox.html">Solo Sandbox</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </header>
 
 
-		<!-- Content -->      
-		<div class="bg-content">
-			<div id="content">
-				<div class="container">
-					<div class="row">
-						<!-- Google +1 button -->
-						<span class="pull-right" style="margin-top:15px;"><div class="g-plusone" data-size="standard" data-href="http://apkreator.com/sandbox.html" ></div></span>
-						<script type="text/javascript">
-						(function() {
-							var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-							po.src = 'https://apis.google.com/js/plusone.js';
-							var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-						})();
-						</script>
-						<form method="POST" action="save_file.php" name="hiddenForm" id="hiddenF">
-							<textarea type="text" id="test" name="test" rows="1" cols="400" style="display:none;"></textarea>
-							<textarea type="text" id="filenameForm" name="filenameForm" rows="1" cols="400" style="display:none;"></textarea>
-							<textarea type="text" id="username" name="username" rows="1" cols="400" style="display:none;"></textarea>
-						</form>
-					</div></div>
-					<div class="container-fluid">
-						<div class="row-fluid">
-							<div class="span2" style="background: #424242; border-radius: 10px; margin-top: 98px; width: auto;">
-								<!--Sidebar content-->
-								<div class="tabbable"> <!-- Only required for left/right tabs -->
-									<center><ul class="nav nav-tabs" style="width:100%">
-										<li><a href="#tab1" data-toggle="tab" style="color:#96AA39"><i class="icon-file" style="margin-top:3px;"></i> Files </a></li>
-										<li class="active"><a href="#tab2" data-toggle="tab" style="color:#96AA39"><i class="icon-plus-sign" style="margin-top:3px;"></i> Collab. </a></li>
-										<li><a href="#tab3" data-toggle="tab" style="color:#96AA39"><i class="icon-wrench" style="margin-top:3px;"></i> Settings </a></li>
-									</ul></center>
-									<div class="tab-content">
-										<div class="tab-pane" id="tab1">
-											<center><h5><i class="icon-white icon-align-left" style="margin-top:5px;"></i> Github Explorer</h5>
-												<form id="form-repo" accept-charset="utf-8" >
-													<input type="text" name="repo" id="repo" style="max-width: 300px;" value="http://github.com/" onfocus="this.value=''" onblur="if (this.value=='') this.value='http://github.com/'" ><br/>
-													<center><a class="btn btn-1 " id="git-button" >Go</a></center></input>
-												</form></center>
-												<div style="margin: 0px 8px 0px 8px;">
-													<div id="git-root" style="max-width: 250px; overflow: auto;"></div>
+			<!-- Content -->      
+			<div class="bg-content">
+				<div id="content">
+					<div class="container">
+						<div class="row">
+							<!-- Google +1 button -->
+							<span class="pull-right" style="margin-top:15px;"><div class="g-plusone" data-size="standard" data-href="http://apkreator.com/sandbox.html" ></div></span>
+							<script type="text/javascript">
+							(function() {
+								var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+								po.src = 'https://apis.google.com/js/plusone.js';
+								var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+							})();
+							</script>
+							<form method="POST" action="save_file.php" name="hiddenForm" id="hiddenF">
+								<textarea type="text" id="test" name="test" rows="1" cols="400" style="display:none;"></textarea>
+								<textarea type="text" id="filenameForm" name="filenameForm" rows="1" cols="400" style="display:none;"></textarea>
+								<textarea type="text" id="username" name="username" rows="1" cols="400" style="display:none;"></textarea>
+							</form>
+						</div></div>
+						<div class="container-fluid">
+							<div class="row-fluid">
+								<div class="span2" style="background: #424242; border-radius: 10px; margin-top: 98px; width: auto;">
+									<!--Sidebar content-->
+									<div class="tabbable"> <!-- Only required for left/right tabs -->
+										<center><ul class="nav nav-tabs" style="width:100%">
+											<li><a href="#tab1" data-toggle="tab" style="color:#96AA39"><i class="icon-file" style="margin-top:3px;"></i> Files </a></li>
+											<li class="active"><a href="#tab2" data-toggle="tab" style="color:#96AA39"><i class="icon-plus-sign" style="margin-top:3px;"></i> Collab. </a></li>
+											<li><a href="#tab3" data-toggle="tab" style="color:#96AA39"><i class="icon-wrench" style="margin-top:3px;"></i> Settings </a></li>
+										</ul></center>
+										<div class="tab-content">
+											<div class="tab-pane" id="tab1">
+												<center><h5><i class="icon-white icon-align-left" style="margin-top:5px;"></i> Github Explorer</h5>
+													<form id="form-repo" accept-charset="utf-8" >
+														<input type="text" name="repo" id="repo" style="max-width: 300px;" value="http://github.com/" onfocus="this.value=''" onblur="if (this.value=='') this.value='http://github.com/'" ><br/>
+														<center><a class="btn btn-1 " id="git-button" >Go</a></center></input>
+													</form></center>
+													<div style="margin: 0px 8px 0px 8px;">
+														<div id="git-root" style="max-width: 250px; overflow: auto;"></div>
+													</div>
 												</div>
-											</div>
-											<div class="tab-pane active" id="tab2">
-												<center><div class="rp-section-content">
-													<button id="authorizeButton" class="btn btn-inverse" style="margin-bottom:15px">Authorize APKreator</button>
-													<h5 style="font-size:1.1em">1. Create or Open a Collaborative File</h5>
-													<input type="text" id="newdoc" title="File name:" style="margin-left: 5px;" value="" placeholder="APKreator-Realtime.txt"></input><br/>
-													<button id="createNewDoc" class="btn btn-info rp-button rp-button-red">Create New File</button>
-													<br/>
-													<div style="margin-top:5px; margin-bottom:5px;">OR</div>
-													<button id="openExistingDoc" class=" btn btn-success rp-button rp-button-submit">Pick From Drive</button><br/><br/>
-													<h5 style="font-size:1.1em">2. Share Link &amp; Start to Collaborate</h5>
-													<button id="demoShareButton" class="btn rp-button rp-button-share">Share the Link</button><br/><br/>
-												</div></center>
-											</div>
-											<div class="tab-pane" id="tab3">
-												<h5 style="margin-left: 20px">Mode</h5>
-												<center><select id="mode-box" size="1">
-													<option value='ace/mode/abap'>ABAP</option> 
-													<option value='ace/mode/actionscript'>ActionScript</option> 
-													<option value='ace/mode/asciidoc'>ASCII doc</option> 
-													<option value='ace/mode/assembly_x86'>Assembly_x86</option> 
-													<option value='ace/mode/batchfile'>Batch</option> 
-													<option value='ace/mode/c9search'>c9search</option> 
-													<option value='ace/mode/c_cpp'>C</option> 
-													<option value='ace/mode/clojure'>Clojure</option> 
-													<option value='ace/mode/coffee'>CoffeeScript</option> 
-													<option value='ace/mode/csharp'>C#</option> 
-													<option value='ace/mode/css'>CSS</option> 
-													<option value='ace/mode/curly'>Curly</option> 
-													<option value='ace/mode/dart'>Dart</option> 
-													<option value='ace/mode/diff'>Diff</option> 
-													<option value='ace/mode/dot'>Dot</option> 
-													<option value='ace/mode/erlang'>Erlang</option> 
-													<option value='ace/mode/forth'>Forth</option> 
-													<option value='ace/mode/ftl'>FTL</option> 
-													<option value='ace/mode/glsl'>GLSL</option> 
-													<option value='ace/mode/golang'>Golang</option> 
-													<option value='ace/mode/groovy'>Groovy</option> 
-													<option value='ace/mode/haml'>HAML</option> 
-													<option value='ace/mode/haskell'>Haskell</option> 
-													<option value='ace/mode/haxe'>Haxe</option> 
-													<option value='ace/mode/html'>HTML</option>  
-													<option value='ace/mode/ini'>Ini</option> 
-													<option value='ace/mode/jade'>Jade</option> 
-													<option value='ace/mode/java'>Java</option> 
-													<option value='ace/mode/javascript'>JavaScript</option> 
-													<option value='ace/mode/json'>JSON</option> 
-													<option value='ace/mode/jsoniq'>JSoniq</option> 
-													<option value='ace/mode/jsp'>JSP</option> 
-													<option value='ace/mode/jsx'>JSX</option> 
-													<option value='ace/mode/julia'>Julia</option> 
-													<option value='ace/mode/latex'>Latex</option> 
-													<option value='ace/mode/less'>Less</option> 
-													<option value='ace/mode/liquid'>Liquid</option> 
-													<option value='ace/mode/lisp'>Lisp</option> 
-													<option value='ace/mode/livescript'>LiveScript</option> 
-													<option value='ace/mode/logiql'>LogiQL</option> 
-													<option value='ace/mode/lsl'>LSL</option> 
-													<option value='ace/mode/lua'>Lua</option> 
-													<option value='ace/mode/luapage'>LuaPage</option> 
-													<option value='ace/mode/lucene'>Lucene</option> 
-													<option value='ace/mode/makefile'>GNU makefile</option> 
-													<option value='ace/mode/markdown'>Markdown</option> 
-													<option value='ace/mode/matlab'>Matlab</option> 
-													<option value='ace/mode/mushcode'>Mushcode</option>
-													<option value='ace/mode/mysql'>MySQL</option> 
-													<option value='ace/mode/objectivec'>Objective C</option>
-													<option value='ace/mode/pascal'>Pascal</option> 
-													<option value='ace/mode/perl'>Perl</option> 
-													<option value='ace/mode/pgsql'>PgSQL</option> 
-													<option value='ace/mode/php'>PHP</option> 
-													<option value='ace/mode/powershell'>Powershell</option> 
-													<option value='ace/mode/prolog'>Prolog</option> 
-													<option value='ace/mode/properties'>Properties</option> 
-													<option value='ace/mode/python'>Python</option> 
-													<option value='ace/mode/r'>R</option> 
-													<option value='ace/mode/rdoc'>Rdoc</option> 
-													<option value='ace/mode/rhtml'>RHTML</option> 
-													<option value='ace/mode/ruby'>Ruby</option> 
-													<option value='ace/mode/rust'>Rust</option> 
-													<option value='ace/mode/sass'>Sass</option> 
-													<option value='ace/mode/scad'>Scad</option> 
-													<option value='ace/mode/scala'>Scala</option> 
-													<option value='ace/mode/scheme'>Scheme</option> 
-													<option value='ace/mode/scss'>SCSS</option> 
-													<option value='ace/mode/sh'>Sh (Bash)</option> 
-													<option value='ace/mode/snippets'>Snippets</option> 
-													<option value='ace/mode/sql'>SQL</option> 
-													<option value='ace/mode/stylus'>Stylus</option> 
-													<option value='ace/mode/svg'>SVG</option> 
-													<option value='ace/mode/tcl'>Tcl</option> 
-													<option value='ace/mode/tex'>Tex</option> 
-													<option value='ace/mode/text'>Text</option> 
-													<option value='ace/mode/textile'>Textile</option> 
-													<option value='ace/mode/toml'>Toml</option> 
-													<option value='ace/mode/typescript'>TypeScript</option> 
-													<option value='ace/mode/vbscript'>VBScript</option> 
-													<option value='ace/mode/velocity'>Velocity</option> 
-													<option value='ace/mode/xml'>XML</option> 
-													<option value='ace/mode/xquery'>xQuery</option> 
-													<option value='ace/mode/yaml'>YAML</option> 
-												</select></center>
-												<h5 style="margin-left: 20px">Theme</h5>
+												<div class="tab-pane active" id="tab2">
+													<center><div class="rp-section-content">
+														<button id="authorizeButton" class="btn btn-inverse" style="margin-bottom:15px">Authorize APKreator</button>
+														<h5 style="font-size:1.1em">1. Create or Open a Collaborative File</h5>
+														<input type="text" id="newdoc" title="File name:" style="margin-left: 5px;" value="" placeholder="APKreator-Realtime.txt"></input><br/>
+														<button id="createNewDoc" class="btn btn-info rp-button rp-button-red">Create New File</button>
+														<br/>
+														<div style="margin-top:5px; margin-bottom:5px;">OR</div>
+														<button id="openExistingDoc" class=" btn btn-success rp-button rp-button-submit">Pick From Drive</button><br/><br/>
+														<h5 style="font-size:1.1em">2. Share Link &amp; Start to Collaborate</h5>
+														<button id="demoShareButton" class="btn rp-button rp-button-share">Share the Link</button><br/><br/>
+													</div></center>
+												</div>
 												<div class="tab-pane" id="tab3">
-													<center><select id="theme" size="1">
-														<optgroup label="Default">
-															<option value="ace/theme/monokai" selected="selected">Monokai</option></optgroup>
-															<optgroup label="Bright">
-																<option value="ace/theme/chrome">Chrome</option>
-																<option value="ace/theme/clouds">Clouds</option>
-																<option value="ace/theme/crimson_editor">Crimson Editor</option>
-																<option value="ace/theme/dawn">Dawn</option>
-																<option value="ace/theme/dreamweaver">Dreamweaver</option>
-																<option value="ace/theme/eclipse">Eclipse</option>
-																<option value="ace/theme/github">GitHub</option>
-																<option value="ace/theme/solarized_light">Solarized Light</option>
-																<option value="ace/theme/textmate">TextMate</option>
-																<option value="ace/theme/tomorrow">Tomorrow</option>
-																<option value="ace/theme/xcode">XCode</option>
-															</optgroup>
-															<optgroup label="Dark">
-																<option value="ace/theme/ambiance">Ambiance</option>
-																<option value="ace/theme/chaos">Chaos</option>
-																<option value="ace/theme/clouds_midnight">Clouds Midnight</option>
-																<option value="ace/theme/cobalt">Cobalt</option>
-																<option value="ace/theme/idle_fingers">idleFingers</option>
-																<option value="ace/theme/kr_theme">krTheme</option>
-																<option value="ace/theme/merbivore">Merbivore</option>
-																<option value="ace/theme/merbivore_soft">Merbivore Soft</option>
-																<option value="ace/theme/mono_industrial">Mono Industrial</option>
-																<option value="ace/theme/monokai">Monokai</option>
-																<option value="ace/theme/pastel_on_dark">Pastel on dark</option>
-																<option value="ace/theme/solarized_dark">Solarized Dark</option>
-																<option value="ace/theme/terminal">Terminal</option>
-																<option value="ace/theme/tomorrow_night">Tomorrow Night</option>
-																<option value="ace/theme/tomorrow_night_blue">Tomorrow Night Blue</option>
-																<option value="ace/theme/tomorrow_night_bright">Tomorrow Night Bright</option>
-																<option value="ace/theme/tomorrow_night_eighties">Tomorrow Night 80s</option>
-																<option value="ace/theme/twilight">Twilight</option>    
-																<option value="ace/theme/vibrant_ink">Vibrant Ink</option>
-															</optgroup>
-														</select></center>
+													<h5 style="margin-left: 20px">Mode</h5>
+													<center><select id="mode-box" size="1">
+														<option value='ace/mode/abap'>ABAP</option> 
+														<option value='ace/mode/actionscript'>ActionScript</option> 
+														<option value='ace/mode/asciidoc'>ASCII doc</option> 
+														<option value='ace/mode/assembly_x86'>Assembly_x86</option> 
+														<option value='ace/mode/batchfile'>Batch</option> 
+														<option value='ace/mode/c9search'>c9search</option> 
+														<option value='ace/mode/c_cpp'>C</option> 
+														<option value='ace/mode/clojure'>Clojure</option> 
+														<option value='ace/mode/coffee'>CoffeeScript</option> 
+														<option value='ace/mode/csharp'>C#</option> 
+														<option value='ace/mode/css'>CSS</option> 
+														<option value='ace/mode/curly'>Curly</option> 
+														<option value='ace/mode/dart'>Dart</option> 
+														<option value='ace/mode/diff'>Diff</option> 
+														<option value='ace/mode/dot'>Dot</option> 
+														<option value='ace/mode/erlang'>Erlang</option> 
+														<option value='ace/mode/forth'>Forth</option> 
+														<option value='ace/mode/ftl'>FTL</option> 
+														<option value='ace/mode/glsl'>GLSL</option> 
+														<option value='ace/mode/golang'>Golang</option> 
+														<option value='ace/mode/groovy'>Groovy</option> 
+														<option value='ace/mode/haml'>HAML</option> 
+														<option value='ace/mode/haskell'>Haskell</option> 
+														<option value='ace/mode/haxe'>Haxe</option> 
+														<option value='ace/mode/html'>HTML</option>  
+														<option value='ace/mode/ini'>Ini</option> 
+														<option value='ace/mode/jade'>Jade</option> 
+														<option value='ace/mode/java'>Java</option> 
+														<option value='ace/mode/javascript'>JavaScript</option> 
+														<option value='ace/mode/json'>JSON</option> 
+														<option value='ace/mode/jsoniq'>JSoniq</option> 
+														<option value='ace/mode/jsp'>JSP</option> 
+														<option value='ace/mode/jsx'>JSX</option> 
+														<option value='ace/mode/julia'>Julia</option> 
+														<option value='ace/mode/latex'>Latex</option> 
+														<option value='ace/mode/less'>Less</option> 
+														<option value='ace/mode/liquid'>Liquid</option> 
+														<option value='ace/mode/lisp'>Lisp</option> 
+														<option value='ace/mode/livescript'>LiveScript</option> 
+														<option value='ace/mode/logiql'>LogiQL</option> 
+														<option value='ace/mode/lsl'>LSL</option> 
+														<option value='ace/mode/lua'>Lua</option> 
+														<option value='ace/mode/luapage'>LuaPage</option> 
+														<option value='ace/mode/lucene'>Lucene</option> 
+														<option value='ace/mode/makefile'>GNU makefile</option> 
+														<option value='ace/mode/markdown'>Markdown</option> 
+														<option value='ace/mode/matlab'>Matlab</option> 
+														<option value='ace/mode/mushcode'>Mushcode</option>
+														<option value='ace/mode/mysql'>MySQL</option> 
+														<option value='ace/mode/objectivec'>Objective C</option>
+														<option value='ace/mode/pascal'>Pascal</option> 
+														<option value='ace/mode/perl'>Perl</option> 
+														<option value='ace/mode/pgsql'>PgSQL</option> 
+														<option value='ace/mode/php'>PHP</option> 
+														<option value='ace/mode/powershell'>Powershell</option> 
+														<option value='ace/mode/prolog'>Prolog</option> 
+														<option value='ace/mode/properties'>Properties</option> 
+														<option value='ace/mode/python'>Python</option> 
+														<option value='ace/mode/r'>R</option> 
+														<option value='ace/mode/rdoc'>Rdoc</option> 
+														<option value='ace/mode/rhtml'>RHTML</option> 
+														<option value='ace/mode/ruby'>Ruby</option> 
+														<option value='ace/mode/rust'>Rust</option> 
+														<option value='ace/mode/sass'>Sass</option> 
+														<option value='ace/mode/scad'>Scad</option> 
+														<option value='ace/mode/scala'>Scala</option> 
+														<option value='ace/mode/scheme'>Scheme</option> 
+														<option value='ace/mode/scss'>SCSS</option> 
+														<option value='ace/mode/sh'>Sh (Bash)</option> 
+														<option value='ace/mode/snippets'>Snippets</option> 
+														<option value='ace/mode/sql'>SQL</option> 
+														<option value='ace/mode/stylus'>Stylus</option> 
+														<option value='ace/mode/svg'>SVG</option> 
+														<option value='ace/mode/tcl'>Tcl</option> 
+														<option value='ace/mode/tex'>Tex</option> 
+														<option value='ace/mode/text'>Text</option> 
+														<option value='ace/mode/textile'>Textile</option> 
+														<option value='ace/mode/toml'>Toml</option> 
+														<option value='ace/mode/typescript'>TypeScript</option> 
+														<option value='ace/mode/vbscript'>VBScript</option> 
+														<option value='ace/mode/velocity'>Velocity</option> 
+														<option value='ace/mode/xml'>XML</option> 
+														<option value='ace/mode/xquery'>xQuery</option> 
+														<option value='ace/mode/yaml'>YAML</option> 
+													</select></center>
+													<h5 style="margin-left: 20px">Theme</h5>
+													<div class="tab-pane" id="tab3">
+														<center><select id="theme" size="1">
+															<optgroup label="Default">
+																<option value="ace/theme/monokai" selected="selected">Monokai</option></optgroup>
+																<optgroup label="Bright">
+																	<option value="ace/theme/chrome">Chrome</option>
+																	<option value="ace/theme/clouds">Clouds</option>
+																	<option value="ace/theme/crimson_editor">Crimson Editor</option>
+																	<option value="ace/theme/dawn">Dawn</option>
+																	<option value="ace/theme/dreamweaver">Dreamweaver</option>
+																	<option value="ace/theme/eclipse">Eclipse</option>
+																	<option value="ace/theme/github">GitHub</option>
+																	<option value="ace/theme/solarized_light">Solarized Light</option>
+																	<option value="ace/theme/textmate">TextMate</option>
+																	<option value="ace/theme/tomorrow">Tomorrow</option>
+																	<option value="ace/theme/xcode">XCode</option>
+																</optgroup>
+																<optgroup label="Dark">
+																	<option value="ace/theme/ambiance">Ambiance</option>
+																	<option value="ace/theme/chaos">Chaos</option>
+																	<option value="ace/theme/clouds_midnight">Clouds Midnight</option>
+																	<option value="ace/theme/cobalt">Cobalt</option>
+																	<option value="ace/theme/idle_fingers">idleFingers</option>
+																	<option value="ace/theme/kr_theme">krTheme</option>
+																	<option value="ace/theme/merbivore">Merbivore</option>
+																	<option value="ace/theme/merbivore_soft">Merbivore Soft</option>
+																	<option value="ace/theme/mono_industrial">Mono Industrial</option>
+																	<option value="ace/theme/monokai">Monokai</option>
+																	<option value="ace/theme/pastel_on_dark">Pastel on dark</option>
+																	<option value="ace/theme/solarized_dark">Solarized Dark</option>
+																	<option value="ace/theme/terminal">Terminal</option>
+																	<option value="ace/theme/tomorrow_night">Tomorrow Night</option>
+																	<option value="ace/theme/tomorrow_night_blue">Tomorrow Night Blue</option>
+																	<option value="ace/theme/tomorrow_night_bright">Tomorrow Night Bright</option>
+																	<option value="ace/theme/tomorrow_night_eighties">Tomorrow Night 80s</option>
+																	<option value="ace/theme/twilight">Twilight</option>    
+																	<option value="ace/theme/vibrant_ink">Vibrant Ink</option>
+																</optgroup>
+															</select></center>
 
-														<h5 style="margin-left: 20px">Keyboard Shortcuts</h5>
-														<center><select id="keybinding" size="1">
-															<option value="ace">Default</option>
-															<option value="vim">Vim</option>
-															<option value="emacs">Emacs</option>
-															<option value="custom">Custom...</option>
-														</select></center>
+															<h5 style="margin-left: 20px">Keyboard Shortcuts</h5>
+															<center><select id="keybinding" size="1">
+																<option value="ace">Default</option>
+																<option value="vim">Vim</option>
+																<option value="emacs">Emacs</option>
+																<option value="custom">Custom...</option>
+															</select></center>
 
-														<h5 style="margin-left: 20px">Editor Options</h5>
-														<p style="color:#96aa39; font-size:0.85em; margin-left:20px;">
-															<input type="checkbox" name="line-highlight" id="line-highlight" class="settings-checkbox" checked="true" style="margin-bottom:3px"></input> Highlight Active Line<br/>
-															<input type="checkbox" name="word-highlight" id="word-highlight" class="settings-checkbox" checked="true" style="margin-bottom:3px"></input> Highlight Selected Word<br/>
-															<input type="checkbox" name="indent-guides" id="indent-guides" class="settings-checkbox" checked="true" style="margin-bottom:3px"></input> Show Indent Guides<br/>
-															<input type="checkbox" name="fold-widgets" id="fold-widgets" class="settings-checkbox" checked="true" style="margin-bottom:3px"></input> Show Fold Widgets<br/>
-															<input type="checkbox" name="show-whitespace" id="show-whitespace" class="settings-checkbox" style="margin-bottom:3px"></input> Show Whitespaces<br/>
-														</p>
-														<script>
-														var lineHighlight = document.getElementById('line-highlight');
-														var wordHighlight = document.getElementById('word-highlight');
-														var showWhitespace = document.getElementById('show-whitespace');
-														var indentGuides = document.getElementById('indent-guides');
-														var foldWidgets = document.getElementById('fold-widgets');
+															<h5 style="margin-left: 20px">Editor Options</h5>
+															<p style="color:#96aa39; font-size:0.85em; margin-left:20px;">
+																<input type="checkbox" name="line-highlight" id="line-highlight" class="settings-checkbox" checked="true" style="margin-bottom:3px"></input> Highlight Active Line<br/>
+																<input type="checkbox" name="word-highlight" id="word-highlight" class="settings-checkbox" checked="true" style="margin-bottom:3px"></input> Highlight Selected Word<br/>
+																<input type="checkbox" name="indent-guides" id="indent-guides" class="settings-checkbox" checked="true" style="margin-bottom:3px"></input> Show Indent Guides<br/>
+																<input type="checkbox" name="fold-widgets" id="fold-widgets" class="settings-checkbox" checked="true" style="margin-bottom:3px"></input> Show Fold Widgets<br/>
+																<input type="checkbox" name="show-whitespace" id="show-whitespace" class="settings-checkbox" style="margin-bottom:3px"></input> Show Whitespaces<br/>
+															</p>
+															<script>
+															var lineHighlight = document.getElementById('line-highlight');
+															var wordHighlight = document.getElementById('word-highlight');
+															var showWhitespace = document.getElementById('show-whitespace');
+															var indentGuides = document.getElementById('indent-guides');
+															var foldWidgets = document.getElementById('fold-widgets');
 
-														lineHighlight.addEventListener("change", function() {
+															lineHighlight.addEventListener("change", function() {
 
-															if (lineHighlight.checked)
-																editor.setHighlightActiveLine(true);
-															else
-																editor.setHighlightActiveLine(false);
-														});
+																if (lineHighlight.checked)
+																	editor.setHighlightActiveLine(true);
+																else
+																	editor.setHighlightActiveLine(false);
+															});
 
-														wordHighlight.addEventListener("change", function() {
+															wordHighlight.addEventListener("change", function() {
 
-															if (wordHighlight.checked)
-																editor.setHighlightSelectedWord(true);
-															else
-																editor.setHighlightSelectedWord(false);
-														});
+																if (wordHighlight.checked)
+																	editor.setHighlightSelectedWord(true);
+																else
+																	editor.setHighlightSelectedWord(false);
+															});
 
-														showWhitespace.addEventListener("change", function() {
+															showWhitespace.addEventListener("change", function() {
 
-															if (showWhitespace.checked)
-																editor.setShowInvisibles(true);
-															else
-																editor.setShowInvisibles(false);
-														});
+																if (showWhitespace.checked)
+																	editor.setShowInvisibles(true);
+																else
+																	editor.setShowInvisibles(false);
+															});
 
-														foldWidgets.addEventListener("change", function() {
+															foldWidgets.addEventListener("change", function() {
 
-															if (foldWidgets.checked)
-																editor.setShowFoldWidgets(true);
-															else
-																editor.setShowFoldWidgets(false);
-														});
+																if (foldWidgets.checked)
+																	editor.setShowFoldWidgets(true);
+																else
+																	editor.setShowFoldWidgets(false);
+															});
 
-														indentGuides.addEventListener("change", function() {
+															indentGuides.addEventListener("change", function() {
 
-															if (indentGuides.checked)
-																editor.setDisplayIndentGuides(true);
-															else
-																editor.setDisplayIndentGuides(false);
-														});
+																if (indentGuides.checked)
+																	editor.setDisplayIndentGuides(true);
+																else
+																	editor.setDisplayIndentGuides(false);
+															});
 
-														</script>
+															</script>
+														</div>
 													</div>
 												</div>
 											</div>
-										</div>
 
 
 
-									</div><br/><br/>
-									<div class="span9">
-										<ul class="nav nav-tabs" id="ourFileTabs">
-											<li class="active"><a href="#tab1" data-toggle="tab" id="file-tab">Current File</a></li>
-											<li class="dropdown">
-												<a class="dropdown-toggle" style="color:#96AA39" data-toggle="dropdown" href="#">Options<b class="caret"></b>
-												</a>
-												<ul class="dropdown-menu">
-													<!-- links -->
-													<a href="#" >Option1</a>
-													<a href="#" > Option2 </a>
+										</div><br/><br/>
+										<div class="span9">
+											<ul class="nav nav-tabs" id="ourFileTabs">
+												<li class="active"><a href="#tab1" data-toggle="tab" id="file-tab">Current File</a></li>
+												<li class="dropdown">
+													<a class="dropdown-toggle" style="color:#96AA39" data-toggle="dropdown" href="#">Options<b class="caret"></b>
+													</a>
+													<ul class="dropdown-menu">
+														<!-- links -->
+														<a href="#" >Option1</a>
+														<a href="#" > Option2 </a>
+													</ul>
 												</ul>
-											</ul>
-											<div class="tab-content">
-												<div class="span8"style="background:#424242; border-radius:10px; min-height:35px; width:100%; padding: 6px;">
-													<script src="https://apis.google.com/js/plusone.js"></script>
-													<span style="margin-left:12px;" id="spanDrive">
-														<div class="g-savetodrive"
-														data-src="Main.java"
-														data-filename="unknown.java"
-														data-sitename="APKreator.com">
-													</div>
-												</span>
-												<a id="saveToDrive" class="btn btn-mini" href="javascript: submitform()"><i class="icon-ok"></i> Save</a>
-												<script type="text/javascript">
+												<div class="tab-content">
+													<div class="span8"style="background:#424242; border-radius:10px; min-height:35px; width:100%; padding: 6px;">
+														<script src="https://apis.google.com/js/plusone.js"></script>
+														<span style="margin-left:12px;" id="spanDrive">
+															<div class="g-savetodrive"
+															data-src="Main.java"
+															data-filename="unknown.java"
+															data-sitename="APKreator.com">
+														</div>
+													</span>
+													<a id="saveToDrive" class="btn btn-mini" href="javascript: submitform()"><i class="icon-ok"></i> Save</a>
+													<script type="text/javascript">
 
-												function submitform() {
-													$('#hiddenF').submit();
-												}
+													function submitform() {
+														$('#hiddenF').submit();
+													}
 
-												</script>
-												<a id="undo" class="btn btn-mini"><i class="icon-step-backward"></i> Undo</a>
-												<a id="redo" class="btn btn-mini"><i class="icon-step-forward"></i> Redo</a>
-												<a id="fs-more" class="btn btn-mini"><i class="icon-plus"></i> Font Size</a>
-												<a id="fs-less" class="btn btn-mini"><i class="icon-minus"></i> Font Size</a>
-												<a id="fullscreen" class="btn btn-mini"><i class="icon-fullscreen"></i> Full Screen</a>
-												<a id="build-java" class="btn btn-mini fancybox {width:200,height:300} fancybox.iframe" href="build.php" title="Build Results"><i class="icon-play"></i> Compile</a>
-											</div><br/><br/>
-											<div class="tab-pane active" id="tab1" style="margin-top:10px;">
-												<div id="editor">// Write your code here</div>
-												<script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
-												<script type="text/javascript" src="js/sandbox-config.js"></script>
+													</script>
+													<a id="undo" class="btn btn-mini"><i class="icon-step-backward"></i> Undo</a>
+													<a id="redo" class="btn btn-mini"><i class="icon-step-forward"></i> Redo</a>
+													<a id="fs-more" class="btn btn-mini"><i class="icon-plus"></i> Font Size</a>
+													<a id="fs-less" class="btn btn-mini"><i class="icon-minus"></i> Font Size</a>
+													<a id="fullscreen" class="btn btn-mini"><i class="icon-fullscreen"></i> Full Screen</a>
+													<a id="build-java" class="btn btn-mini fancybox {width:200,height:300} fancybox.iframe" href="build.php" title="Build Results"><i class="icon-play"></i> Compile</a>
+												</div><br/><br/>
+												<div class="tab-pane active" id="tab1" style="margin-top:10px;">
+													<div id="editor">// Write your code here</div>
+													<script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+													<script type="text/javascript" src="js/sandbox-config.js"></script>
+												</div>
+												<div class="tab-pane" id="tab2">
+												</div>
+
 											</div>
-											<div class="tab-pane" id="tab2">
-											</div>
-
 										</div>
-									</div>
-								</div></div></div></div>
+									</div></div></div></div>
 
-								<!-- footer -->
-								<footer>
-									<div class="container clearfix">
-										<ul class="list-social pull-right">
-											<li><a class="icon-1" href="#"></a></li>
-											<li><a class="icon-2" href="#"></a></li>
-											<li><a class="icon-3" href="#"></a></li>
-											<li><a class="icon-4" href="#"></a></li>
-										</ul>
-										<div class="privacy pull-left">&copy; 2013 | <a href="http://apkreator.com">APKreator</a> |           </div>
-									</div>
-									<script>
-									var editor = ace.edit("editor");
-									var iFrequency = 1500;
-									var myInterval = 0;
+									<!-- footer -->
+									<footer>
+										<div class="container clearfix">
+											<ul class="list-social pull-right">
+												<li><a class="icon-1" href="#"></a></li>
+												<li><a class="icon-2" href="#"></a></li>
+												<li><a class="icon-3" href="#"></a></li>
+												<li><a class="icon-4" href="#"></a></li>
+											</ul>
+											<div class="privacy pull-left">&copy; 2013 | <a href="http://apkreator.com">APKreator</a> |           </div>
+										</div>
+										<script>
+										var editor = ace.edit("editor");
+										var iFrequency = 1500;
+										var myInterval = 0;
 
-									$('#createNewDoc').on("click", function() {
-										realtimeOptions["defaultTitle"] = document.getElementById('newdoc').value;
-										var realtimeLoader = new rtclient.RealtimeLoader(realtimeOptions);
-										realtimeLoader.start();
-									});
+										$('#createNewDoc').on("click", function() {
+											realtimeOptions["defaultTitle"] = document.getElementById('newdoc').value;
+											var realtimeLoader = new rtclient.RealtimeLoader(realtimeOptions);
+											realtimeLoader.start();
+										});
 
-									document.getElementById('createNewDoc').addEventListener("click", function() {
-										realtimeOptions["defaultTitle"] = document.getElementById('newdoc').value;
-										var realtimeLoader = new rtclient.RealtimeLoader(realtimeOptions);
-										realtimeLoader.start();
-										console.log('STARTED  ' + realtimeOptions["defaultTitle"] );
-									});
+										document.getElementById('createNewDoc').addEventListener("click", function() {
+											realtimeOptions["defaultTitle"] = document.getElementById('newdoc').value;
+											var realtimeLoader = new rtclient.RealtimeLoader(realtimeOptions);
+											realtimeLoader.start();
+											console.log('STARTED  ' + realtimeOptions["defaultTitle"] );
+										});
 
-									function initializeModel(model) {
-										var string = model.createString(editor.getValue());
-										model.getRoot().set('text', string);
-										console.log(string + "");
-									};
+										function initializeModel(model) {
+											var string = model.createString(editor.getValue());
+											model.getRoot().set('text', string);
+											console.log(string + "");
+										};
 
-									function onFileLoaded(doc) {
-										var string = doc.getModel().getRoot().get('text');
-										$('#authorizeButton').hide('explode');
-										document.getElementById('authorizeButton').setAttribute('style', 'height:0px; margin-bottom:0px;');
+										function onFileLoaded(doc) {
+											var string = doc.getModel().getRoot().get('text');
+											$('#authorizeButton').hide('explode');
+											document.getElementById('authorizeButton').setAttribute('style', 'height:0px; margin-bottom:0px;');
 
 	      // Keeping one box updated with a custom EventListener.
 	      var codeBox = document.getElementById('editor');
