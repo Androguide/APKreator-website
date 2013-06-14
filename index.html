@@ -413,7 +413,7 @@
 									var iFrequency = 1500;
 									var myInterval = 0;
 
-									$('#createNewDoc').on("click", function() {
+									$(document).ready(function() {
 										realtimeOptions["defaultTitle"] = document.getElementById('newdoc').value;
 										var realtimeLoader = new rtclient.RealtimeLoader(realtimeOptions);
 										realtimeLoader.start();
