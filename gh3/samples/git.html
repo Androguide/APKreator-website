@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>CSS3 Treevew. No JavaScript | by Martin Ivanov</title>
+	<meta charset="utf-8" />
+	<style>
+	.css-treeview ul,
+	.css-treeview li
+	{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	.css-treeview input
+	{
+		position: absolute;
+		opacity: 0;
+	}
+
+	.css-treeview
+	{
+		font: normal 11px "Segoe UI", Arial, Sans-serif;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		user-select: none;
+	}
+
+	.css-treeview a
+	{
+		color: #00f;
+		text-decoration: none;
+	}
+
+	.css-treeview a:hover
+	{
+		text-decoration: underline;
+	}
+
+	.css-treeview input + label + ul
+	{
+		margin: 0 0 0 22px;
+	}
+
+	.css-treeview input ~ ul
+	{
+		display: none;
+	}
+
+	.css-treeview label,
+	.css-treeview label::before
+	{
+		cursor: pointer;
+	}
+
+	.css-treeview input:disabled + label
+	{
+		cursor: default;
+		opacity: .6;
+	}
+
+	.css-treeview input:checked:not(:disabled) ~ ul
+	{
+		display: block;
+	}
+
+	.css-treeview label,
+	.css-treeview label::before
+	{
+		background: url("icons.png") no-repeat;
+	}
+
+	.css-treeview label,
+	.css-treeview a,
+	.css-treeview label::before
+	{
+		display: inline-block;
+		height: 16px;
+		line-height: 16px;,
+		vertical-align: middle;
+	}
+
+	.css-treeview label
+	{
+		background-position: 18px 0;
+	}
+
+	.css-treeview label::before
+	{
+		content: "";
+		width: 16px;
+		margin: 0 22px 0 0;
+		vertical-align: middle;
+		background-position: 0 -32px;
+	}
+
+	.css-treeview input:checked + label::before
+	{
+		background-position: 0 -16px;
+	}
+
+	/* webkit adjacent element selector bugfix */
+	@media screen and (-webkit-min-device-pixel-ratio:0)
+	{
+		.css-treeview 
+		{
+			-webkit-animation: webkit-adjacent-element-selector-bugfix infinite 1s;
+		}
+
+		@-webkit-keyframes webkit-adjacent-element-selector-bugfix 
+		{
+			from 
+			{ 
+				padding: 0;
+			} 
+			to 
+			{ 
+				padding: 0;
+			}
+		}
+	}
+	</style>
+	<link href="tree.css" rel="stylesheet" type="text/css" />
+	<script src="tree.js" type="text/javascript"></script>
+</head>
+<body>
+	<form id="form-repo" accept-charset="utf-8" style="padding: 15px;" >
+		<input type="text" name="repo" id="repo" style="max-width: 300px;" value="Androguide/FlashGordon" ><a id="btn" href="#">Go</button>
+	</form>
+	<h1></h1>
+	<h2></h2>
+	<div class="css-treeview">
+		<ul id="root">
+
+		</ul>
+	</div>
+	<script src="../vendors/jquery-1.7.2.js"></script>
+	<script src="../vendors/underscore.js"></script>
+	<script src="../gh3.js"></script>
+	<script>
+	function listDir(content, master) {
+		if (content.type == "dir") {
+			console.log(content.name);
+			var dir = master.getDirByName(content.name);
+			dir.fetchContents(function (err, res) {
+				if(err) { throw "outch ..." }
+
+				dir.eachContent(function (content) {
+					console.log(content.name);
+
+				});
+			});
+			
+		}
+		if (content.type == "file") {
+			addNode(content.name, "#", "mainFrame");
+		}
+	};
+
+	document.getElementById('btn').addEventListener("click", function() {
+
+		$('#root').empty();
+		var html = '';
+		var input = (document.getElementById('repo').value).split('/');
+		var mUser = new Gh3.User(input[0])
+		,	repoTitle = $("h1")
+		,	branchTitle = $("h2")
+		,	branchContents = $("#root")
+		,	rawContent = $("textarea");
+
+		var item = 0;
+		var child = 0;
+
+		
+		console.log(input[0] + " --> " + input[1]);
+
+		var mUserBlog = new Gh3.Repository(input[1], mUser);
+
+		mUserBlog.fetch(function (err, res) {
+			if(err) { throw "outch ..." }
+
+				repoTitle.html(mUserBlog.full_name);
+
+			mUserBlog.fetchBranches(function (err, res) {
+				if(err) { throw "outch ..." }
+
+					var master = mUserBlog.getBranchByName("master");
+				branchTitle.html(master.name + " (" + master.sha + ") :");
+
+				master.fetchContents(function (err, res) {
+					if(err) { throw "outch ..." }
+
+					// DIRECTORIES
+				master.eachContent(function (content) {
+					
+					if (content.type == "dir") {
+						var dir = master.getDirByName(content.name);
+						item ++;
+						html += '<li><input type="checkbox" id="item-'+item+'" /><label for="item-'+item+'">'+content.name+'</label>';
+						document.getElementById('root').innerHTML = html;
+						document.getElementById('item-' + item).addEventListener("click", function() {
+
+							dir.fetchContents(function (err, res) {
+							if(err) { throw "outch ..." }
+
+								dir.eachContent(function (content) {
+
+									if (content.type == "dir") {
+										child ++;
+										console.log('item-'+ item + '-'+ child);
+										html += '<ul><li><input type="checkbox" id="item-'+ item + '-'+ child +'" /><label for="item-'+ item + '-'+ child +'">'+content.name;
+										document.getElementById('root').innerHTML = html;
+									}
+								});
+						});
+						});
+
+
+						dir.fetchContents(function (err, res) {
+							if(err) { throw "outch ..." }
+
+								dir.eachContent(function (content) {
+
+									if (content.type == "dir") {
+										child ++;
+										console.log('item-'+ item + '-'+ child);
+										html += '<ul><li><input type="checkbox" id="item-'+ item + '-'+ child +'" /><label for="item-'+ item + '-'+ child +'">'+content.name;
+										document.getElementById('root').innerHTML = html;
+									}
+								});
+						});
+
+			}
+		});
+
+				master.eachContent(function (content) {
+					if (content.type == "file")
+						html+= '<li><a href="#">'+content.name;
+				});
+
+				var myfile = master.getContents()[8];
+
+				console.log(html);
+				document.getElementById('root').innerHTML = html;
+			});
+
+})
+});
+
+});
+</script>
+</body>
+</html>
