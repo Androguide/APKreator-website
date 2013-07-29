@@ -51,13 +51,13 @@
 	    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
 	    <![endif]-->
 	    <script type="text/javascript">
-	    (function() {
-	    	var po = document.createElement('script');
-	    	po.type = 'text/javascript'; po.async = true;
-	    	po.src = 'https://plus.google.com/js/client:plusone.js';
-	    	var s = document.getElementsByTagName('script')[0];
-	    	s.parentNode.insertBefore(po, s);
-	    })();
+	    	(function() {
+	    		var po = document.createElement('script');
+	    		po.type = 'text/javascript'; po.async = true;
+	    		po.src = 'https://plus.google.com/js/client:plusone.js';
+	    		var s = document.getElementsByTagName('script')[0];
+	    		s.parentNode.insertBefore(po, s);
+	    	})();
 	    </script>
 
 	    <!-- Load the Realtime libraries. -->
@@ -70,7 +70,6 @@
 	</head>
 
 	<body onLoad="startRealtime()" style="background: #FFFFFF">
-	<a href="https://github.com/Androguide/APKreator"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
 		<!-- header -->
 		<header id="header-navbar">
 			<div class="container clearfix">
@@ -93,7 +92,7 @@
 			</div>
 		</header>
 
-
+		<a href="https://github.com/Androguide/APKreator"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
 		<!-- Content -->      
 		<div class="bg-content">
 			<div id="content">
@@ -102,11 +101,11 @@
 						<!-- Google +1 button -->
 						<span class="pull-right" style="margin-top:15px;"><div class="g-plusone" data-size="standard" data-href="http://apkreator.com/sandbox.html" ></div></span>
 						<script type="text/javascript">
-						(function() {
-							var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-							po.src = 'https://apis.google.com/js/plusone.js';
-							var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-						})();
+							(function() {
+								var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+								po.src = 'https://apis.google.com/js/plusone.js';
+								var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+							})();
 						</script>
 						<form method="POST" action="save_file.php" name="hiddenForm" id="hiddenF">
 							<textarea type="text" id="test" name="test" rows="1" cols="400" style="display:none;"></textarea>
@@ -294,51 +293,51 @@
 															<input type="checkbox" name="show-whitespace" id="show-whitespace" class="settings-checkbox" style="margin-bottom:3px"></input> Show Whitespaces<br/>
 														</p>
 														<script>
-														var lineHighlight = document.getElementById('line-highlight');
-														var wordHighlight = document.getElementById('word-highlight');
-														var showWhitespace = document.getElementById('show-whitespace');
-														var indentGuides = document.getElementById('indent-guides');
-														var foldWidgets = document.getElementById('fold-widgets');
+															var lineHighlight = document.getElementById('line-highlight');
+															var wordHighlight = document.getElementById('word-highlight');
+															var showWhitespace = document.getElementById('show-whitespace');
+															var indentGuides = document.getElementById('indent-guides');
+															var foldWidgets = document.getElementById('fold-widgets');
 
-														lineHighlight.addEventListener("change", function() {
+															lineHighlight.addEventListener("change", function() {
 
-															if (lineHighlight.checked)
-																editor.setHighlightActiveLine(true);
-															else
-																editor.setHighlightActiveLine(false);
-														});
+																if (lineHighlight.checked)
+																	editor.setHighlightActiveLine(true);
+																else
+																	editor.setHighlightActiveLine(false);
+															});
 
-														wordHighlight.addEventListener("change", function() {
+															wordHighlight.addEventListener("change", function() {
 
-															if (wordHighlight.checked)
-																editor.setHighlightSelectedWord(true);
-															else
-																editor.setHighlightSelectedWord(false);
-														});
+																if (wordHighlight.checked)
+																	editor.setHighlightSelectedWord(true);
+																else
+																	editor.setHighlightSelectedWord(false);
+															});
 
-														showWhitespace.addEventListener("change", function() {
+															showWhitespace.addEventListener("change", function() {
 
-															if (showWhitespace.checked)
-																editor.setShowInvisibles(true);
-															else
-																editor.setShowInvisibles(false);
-														});
+																if (showWhitespace.checked)
+																	editor.setShowInvisibles(true);
+																else
+																	editor.setShowInvisibles(false);
+															});
 
-														foldWidgets.addEventListener("change", function() {
+															foldWidgets.addEventListener("change", function() {
 
-															if (foldWidgets.checked)
-																editor.setShowFoldWidgets(true);
-															else
-																editor.setShowFoldWidgets(false);
-														});
+																if (foldWidgets.checked)
+																	editor.setShowFoldWidgets(true);
+																else
+																	editor.setShowFoldWidgets(false);
+															});
 
-														indentGuides.addEventListener("change", function() {
+															indentGuides.addEventListener("change", function() {
 
-															if (indentGuides.checked)
-																editor.setDisplayIndentGuides(true);
-															else
-																editor.setDisplayIndentGuides(false);
-														});
+																if (indentGuides.checked)
+																	editor.setDisplayIndentGuides(true);
+																else
+																	editor.setDisplayIndentGuides(false);
+															});
 
 														</script>
 													</div>
@@ -374,9 +373,9 @@
 												<a id="saveToDrive" class="btn btn-mini" href="javascript: submitform()"><i class="icon-ok"></i> Save</a>
 												<script type="text/javascript">
 
-												function submitform() {
-													$('#hiddenF').submit();
-												}
+													function submitform() {
+														$('#hiddenF').submit();
+													}
 
 												</script>
 												<a id="undo" class="btn btn-mini"><i class="icon-step-backward"></i> Undo</a>
@@ -410,33 +409,33 @@
 										<div class="privacy pull-left">&copy; 2013 | <a href="http://apkreator.com">APKreator</a> |           </div>
 									</div>
 									<script>
-									var editor = ace.edit("editor");
-									var iFrequency = 1500;
-									var myInterval = 0;
+										var editor = ace.edit("editor");
+										var iFrequency = 1500;
+										var myInterval = 0;
 
-									$(document).ready(function() {
-										realtimeOptions["defaultTitle"] = document.getElementById('newdoc').value;
-										var realtimeLoader = new rtclient.RealtimeLoader(realtimeOptions);
-										realtimeLoader.start();
-									});
+										$(document).ready(function() {
+											realtimeOptions["defaultTitle"] = document.getElementById('newdoc').value;
+											var realtimeLoader = new rtclient.RealtimeLoader(realtimeOptions);
+											realtimeLoader.start();
+										});
 
-									document.getElementById('createNewDoc').addEventListener("click", function() {
-										realtimeOptions["defaultTitle"] = document.getElementById('newdoc').value;
-										var realtimeLoader = new rtclient.RealtimeLoader(realtimeOptions);
-										realtimeLoader.start();
-										console.log('STARTED  ' + realtimeOptions["defaultTitle"] );
-									});
+										document.getElementById('createNewDoc').addEventListener("click", function() {
+											realtimeOptions["defaultTitle"] = document.getElementById('newdoc').value;
+											var realtimeLoader = new rtclient.RealtimeLoader(realtimeOptions);
+											realtimeLoader.start();
+											console.log('STARTED  ' + realtimeOptions["defaultTitle"] );
+										});
 
-									function initializeModel(model) {
-										var string = model.createString(editor.getValue());
-										model.getRoot().set('text', string);
-										console.log(string + "");
-									};
+										function initializeModel(model) {
+											var string = model.createString(editor.getValue());
+											model.getRoot().set('text', string);
+											console.log(string + "");
+										};
 
-									function onFileLoaded(doc) {
-										var string = doc.getModel().getRoot().get('text');
-										$('#authorizeButton').hide('explode');
-										document.getElementById('authorizeButton').setAttribute('style', 'height:0px; margin-bottom:0px;');
+										function onFileLoaded(doc) {
+											var string = doc.getModel().getRoot().get('text');
+											$('#authorizeButton').hide('explode');
+											document.getElementById('authorizeButton').setAttribute('style', 'height:0px; margin-bottom:0px;');
 
 	      // Keeping one box updated with a custom EventListener.
 	      var codeBox = document.getElementById('editor');
@@ -482,18 +481,18 @@
 	  	realtimeLoader.start();
 	  }
 
-	  </script>
+	</script>
 
-	  <script type="text/javascript">
-	  $(document).ready(function() {
-	      var tabs = localStorage.getItem("filesArray");
-	      for (var i = 0; i < tabs.length; i++) {
-	      	  $("ourFileTabs").append("<li><a href=\'#tab1\' data-toggle=\'tab\' id=\'file-tab\'>" + tabs[i] + "</a></li>");
-	      }
-	  });
-	  </script>
-	</footer>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var tabs = localStorage.getItem("filesArray");
+			for (var i = 0; i < tabs.length; i++) {
+				$("ourFileTabs").append("<li><a href=\'#tab1\' data-toggle=\'tab\' id=\'file-tab\'>" + tabs[i] + "</a></li>");
+			}
+		});
+	</script>
+</footer>
+<script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
 <script type="text/javascript" src="js/github-explorer.js"></script>
 <script type="text/javascript" src="js/ace-resizer.js"></script>
